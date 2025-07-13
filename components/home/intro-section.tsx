@@ -14,7 +14,7 @@ export default function IntroSection() {
             We encourage friendly discussions, expert advice, and heartwarming stories about our loyal companions.
           </p>
           <p className="text-amber-600 font-semibold">
-            Join our community and discover the joy of German Shepherd companionship!
+            <a href="https://www.facebook.com/share/g/1AmwedoLQa/?mibextid=wwXIfr">Join our community and discover the joy of German Shepherd companionship!</a>
           </p>
         </div>
       </div>
