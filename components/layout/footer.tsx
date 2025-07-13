@@ -104,10 +104,10 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 BookerShepherds. All rights reserved. Made with ❤️ for German Shepherd lovers.
+            © 2025 BookerShepherds. All rights reserved. Made with ❤️ for German Shepherd lovers.
           </p>
           <p className="text-xs text-gray-500 mt-1">
-            Managed by James (jamesbookergsd3) - API User Authentication Active
+            Managed by James (jamesbookergsd3)
           </p>
         </div>
       </div>
