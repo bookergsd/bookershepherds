@@ -9,11 +9,13 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Welcome to Our German Shepherd Community 🇩🇪🐾
+              Welcome to Our German Shepherd Community 🐾
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              Find your perfect German Shepherd companion through ethical adoption and discover premium accessories for
-              your loyal friend.
+              We specialize in German Shepherd breeding and are a proud family-owned and operated program. As breeders
+              and parents of 3 wonderful kids we raise our puppies with love right in our home. Our puppies are
+              affectionate, intelligent, and loyal. They’re health-tested, raw-fed, and early socialized, making them
+              the perfect companions for family life. 🏡🐶
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/adoption">

@@ -8,14 +8,14 @@ const testimonials = [
     name: "Sarah Johnson",
     image: "/placeholder.svg?height=80&width=80",
     rating: 5,
-    text: "We adopted Max from BookerShepherds and couldn't be happier! The process was smooth and the team was incredibly helpful throughout.",
+    text: "We adopted Red Collar from BookerShepherds and couldn't be happier! The process was smooth and the team was incredibly helpful throughout.",
   },
   {
     id: 2,
     name: "Mike Chen",
     image: "/placeholder.svg?height=80&width=80",
     rating: 5,
-    text: "The quality of accessories we purchased is outstanding. Our German Shepherd Luna loves her new collar and leash!",
+    text: "The quality of accessories we purchased is outstanding. Our German Shepherd Blue Collar loves her new collar and leash!",
   },
   {
     id: 3,
@@ -23,6 +23,41 @@ const testimonials = [
     image: "/placeholder.svg?height=80&width=80",
     rating: 5,
     text: "Professional, caring, and knowledgeable. BookerShepherds truly cares about the welfare of their dogs and finding the right families.",
+  },
+  {
+    id: 4,
+    name: "John Doe",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "Our family is complete with Copper Collar. BookerShepherds made the adoption process so easy and transparent. Copper Collar is a joy!",
+  },
+  {
+    id: 5,
+    name: "Maria Garcia",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "The training treats from BookerShepherds are a game-changer! My dog loves them, and they're perfect for positive reinforcement.",
+  },
+  {
+    id: 6,
+    name: "Chris Lee",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "Gold Collar is the most intelligent dog I've ever had. Thanks to BookerShepherds for raising such well-adjusted puppies.",
+  },
+  {
+    id: 7,
+    name: "Jessica Brown",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "The customer service is exceptional. They helped me choose the perfect bed for my large German Shepherd. Highly recommend!",
+  },
+  {
+    id: 8,
+    name: "Daniel White",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "We adopted a puppy from BookerShepherds, and she's thriving. Healthy, happy, and full of love. Best decision ever!",
   },
 ]
 

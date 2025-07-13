@@ -1,26 +1,28 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { useCart } from "@/components/cart/cart-context"
 import { useToast } from "@/hooks/use-toast"
+import ImageModal from "@/components/image-modal" // Import the new ImageModal
 
 const featuredDogs = [
   {
     id: 1,
-    name: "Max",
+    name: "Red Collar", // Changed from Max
     age: "2 years",
-    price: 1200,
+    price: 950, // Price adjusted
     image: "/images/max.jpg",
     description: "Friendly and well-trained male German Shepherd",
   },
   {
     id: 2,
-    name: "Luna",
+    name: "Blue Collar", // Changed from Luna
     age: "1.5 years",
-    price: 1100,
+    price: 900, // Price adjusted
     image: "/images/luna.jpg",
     description: "Beautiful female with excellent temperament",
   },
@@ -46,6 +48,8 @@ const featuredProducts = [
 export default function FeaturedSection() {
   const { addItem } = useCart()
   const { toast } = useToast()
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleAdoptDog = (dog: (typeof featuredDogs)[0]) => {
     addItem({
@@ -77,89 +81,119 @@ export default function FeaturedSection() {
     })
   }
 
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Featured Dogs */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Featured Dogs for Adoption</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredDogs.map((dog) => (
-              <Card key={dog.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <CardHeader className="p-0">
-                  <div className="relative w-full h-64 bg-gray-100">
-                    <Image
-                      src={dog.image || "/placeholder.svg"}
-                      alt={`${dog.name} - German Shepherd for adoption`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-center"
-                      priority
-                    />
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardTitle className="text-xl mb-2">{dog.name}</CardTitle>
-                  <p className="text-gray-600 mb-2">{dog.age}</p>
-                  <p className="text-gray-700 mb-4">{dog.description}</p>
-                  <p className="text-2xl font-bold text-amber-600">${dog.price}</p>
-                </CardContent>
-                <CardFooter className="p-6 pt-0">
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700" onClick={() => handleAdoptDog(dog)}>
-                    Adopt Me
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/adoption">
-              <Button variant="outline" size="lg">
-                View All Available Dogs
-              </Button>
-            </Link>
-          </div>
-        </div>
+  const openImageModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc)
+    setIsModalOpen(true)
+  }
 
-        {/* Featured Products */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Featured Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredProducts.map((product) => (
-              <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <CardHeader className="p-0">
-                  <div className="relative w-full h-48 bg-gray-100">
-                    <Image
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-center"
-                    />
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
-                  <p className="text-gray-700 mb-4">{product.description}</p>
-                  <p className="text-2xl font-bold text-amber-600">${product.price}</p>
-                </CardContent>
-                <CardFooter className="p-6 pt-0">
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700" onClick={() => handleAddProduct(product)}>
-                    Add to Cart
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+  const closeImageModal = () => {
+    setSelectedImage(null)
+    setIsModalOpen(false)
+  }
+
+  return (
+    <>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured Dogs */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Featured Dogs for Adoption</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {featuredDogs.map((dog) => (
+                <Card key={dog.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <CardHeader className="p-0">
+                    <div
+                      className="relative w-full h-64 bg-gray-100 cursor-pointer"
+                      onClick={() => openImageModal(dog.image)}
+                    >
+                      <Image
+                        src={dog.image || "/placeholder.svg"}
+                        alt={`${dog.name} - German Shepherd for adoption`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover object-center"
+                        priority
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <CardTitle className="text-xl mb-2">{dog.name}</CardTitle>
+                    <p className="text-gray-600 mb-2">{dog.age}</p>
+                    <p className="text-gray-700 mb-4">{dog.description}</p>
+                    <p className="text-2xl font-bold text-amber-600">${dog.price}</p>
+                  </CardContent>
+                  <CardFooter className="p-6 pt-0">
+                    <Button className="w-full bg-amber-600 hover:bg-amber-700" onClick={() => handleAdoptDog(dog)}>
+                      Adopt Me
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Link href="/adoption">
+                <Button variant="outline" size="lg">
+                  View All Available Dogs
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className="text-center mt-8">
-            <Link href="/shop">
-              <Button variant="outline" size="lg">
-                Shop All Products
-              </Button>
-            </Link>
+
+          {/* Featured Products */}
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Featured Products</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {featuredProducts.map((product) => (
+                <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <CardHeader className="p-0">
+                    <div
+                      className="relative w-full h-48 bg-gray-100 cursor-pointer"
+                      onClick={() => openImageModal(product.image)}
+                    >
+                      <Image
+                        src={product.image || "/placeholder.svg"}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover object-center"
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
+                    <p className="text-gray-700 mb-4">{product.description}</p>
+                    <p className="text-2xl font-bold text-amber-600">${product.price}</p>
+                  </CardContent>
+                  <CardFooter className="p-6 pt-0">
+                    <Button
+                      className="w-full bg-amber-600 hover:bg-amber-700"
+                      onClick={() => handleAddProduct(product)}
+                    >
+                      Add to Cart
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Link href="/shop">
+                <Button variant="outline" size="lg">
+                  Shop All Products
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {selectedImage && (
+        <ImageModal
+          src={selectedImage || "/placeholder.svg"}
+          alt="Full size image"
+          isOpen={isModalOpen}
+          onClose={closeImageModal}
+        />
+      )}
+    </>
   )
 }

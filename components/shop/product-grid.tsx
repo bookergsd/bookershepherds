@@ -5,11 +5,12 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input" // Corrected import statement
 import { Label } from "@/components/ui/label"
 import { useCart } from "@/components/cart/cart-context"
 import { useToast } from "@/hooks/use-toast"
 import { ShoppingCart, Star } from "lucide-react"
+import ImageModal from "@/components/image-modal" // Import the new ImageModal
 
 const products = [
   {
@@ -143,6 +144,8 @@ export default function ProductGrid() {
   const [quantities, setQuantities] = useState<{ [key: number]: number }>({})
   const { addItem } = useCart()
   const { toast } = useToast()
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleQuantityChange = (productId: number, quantity: number) => {
     setQuantities((prev) => ({
@@ -171,78 +174,102 @@ export default function ProductGrid() {
     })
   }
 
+  const openImageModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc)
+    setIsModalOpen(true)
+  }
+
+  const closeImageModal = () => {
+    setSelectedImage(null)
+    setIsModalOpen(false)
+  }
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {products.map((product) => (
-        <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-          <CardHeader className="p-0 relative">
-            <div className="relative w-full h-56 bg-gray-100">
-              <Image
-                src={product.image || "/placeholder.svg"}
-                alt={product.name}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                className="object-cover object-center hover:scale-105 transition-transform duration-300"
-                priority={product.id <= 104}
-              />
-            </div>
-            <Badge className="absolute top-3 left-3 bg-amber-600 text-white shadow-md">{product.category}</Badge>
-            {!product.inStock && (
-              <Badge className="absolute top-3 right-3 bg-red-500 text-white shadow-md">Out of Stock</Badge>
-            )}
-          </CardHeader>
-          <CardContent className="p-4 flex-grow flex flex-col">
-            <CardTitle className="text-lg mb-2 line-clamp-2 min-h-[3.5rem]">{product.name}</CardTitle>
-
-            <div className="flex items-center gap-1 mb-3">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`h-4 w-4 ${
-                      i < Math.floor(product.rating) ? "text-yellow-400 fill-current" : "text-gray-300"
-                    }`}
-                  />
-                ))}
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+            <CardHeader className="p-0 relative">
+              <div
+                className="relative w-full h-56 bg-gray-100 cursor-pointer"
+                onClick={() => openImageModal(product.image)}
+              >
+                <Image
+                  src={product.image || "/placeholder.svg"}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover object-center hover:scale-105 transition-transform duration-300"
+                  priority={product.id <= 104}
+                />
               </div>
-              <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
-            </div>
-
-            <p className="text-gray-700 mb-4 text-sm line-clamp-3 flex-grow">{product.description}</p>
-
-            <div className="mt-auto">
-              <p className="text-xl font-bold text-amber-600 mb-4">${product.price}</p>
-
-              {product.inStock && (
-                <div className="flex items-center gap-2 mb-4">
-                  <Label htmlFor={`quantity-${product.id}`} className="text-sm font-medium">
-                    Qty:
-                  </Label>
-                  <Input
-                    id={`quantity-${product.id}`}
-                    type="number"
-                    min="1"
-                    max="10"
-                    value={quantities[product.id] || 1}
-                    onChange={(e) => handleQuantityChange(product.id, Number.parseInt(e.target.value))}
-                    className="w-20 h-9 text-center"
-                  />
-                </div>
+              <Badge className="absolute top-3 left-3 bg-amber-600 text-white shadow-md">{product.category}</Badge>
+              {!product.inStock && (
+                <Badge className="absolute top-3 right-3 bg-red-500 text-white shadow-md">Out of Stock</Badge>
               )}
-            </div>
-          </CardContent>
-          <CardFooter className="p-4 pt-0">
-            <Button
-              className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
-              onClick={() => handleAddToCart(product)}
-              disabled={!product.inStock}
-            >
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              {product.inStock ? "Add to Cart" : "Out of Stock"}
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
+            </CardHeader>
+            <CardContent className="p-4 flex-grow flex flex-col">
+              <CardTitle className="text-lg mb-2 line-clamp-2 min-h-[3.5rem]">{product.name}</CardTitle>
+
+              <div className="flex items-center gap-1 mb-3">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${
+                        i < Math.floor(product.rating) ? "text-yellow-400 fill-current" : "text-gray-300"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
+              </div>
+
+              <p className="text-gray-700 mb-4 text-sm line-clamp-3 flex-grow">{product.description}</p>
+
+              <div className="mt-auto">
+                <p className="text-xl font-bold text-amber-600 mb-4">${product.price}</p>
+
+                {product.inStock && (
+                  <div className="flex items-center gap-2 mb-4">
+                    <Label htmlFor={`quantity-${product.id}`} className="text-sm font-medium">
+                      Qty:
+                    </Label>
+                    <Input
+                      id={`quantity-${product.id}`}
+                      type="number"
+                      min="1"
+                      max="10"
+                      value={quantities[product.id] || 1}
+                      onChange={(e) => handleQuantityChange(product.id, Number.parseInt(e.target.value))}
+                      className="w-20 h-9 text-center"
+                    />
+                  </div>
+                )}
+              </div>
+            </CardContent>
+            <CardFooter className="p-4 pt-0">
+              <Button
+                className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                onClick={() => handleAddToCart(product)}
+                disabled={!product.inStock}
+              >
+                <ShoppingCart className="h-4 w-4 mr-2" />
+                {product.inStock ? "Add to Cart" : "Out of Stock"}
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+
+      {selectedImage && (
+        <ImageModal
+          src={selectedImage || "/placeholder.svg"}
+          alt="Full size image"
+          isOpen={isModalOpen}
+          onClose={closeImageModal}
+        />
+      )}
+    </>
   )
 }
