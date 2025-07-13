@@ -11,20 +11,20 @@ import ImageModal from "@/components/image-modal" // Import the new ImageModal
 
 const featuredDogs = [
   {
-    id: 1,
-    name: "Red Collar", // Changed from Max
-    age: "2 years",
-    price: 950, // Price adjusted
-    image: "/images/max.jpg",
-    description: "Friendly and well-trained male German Shepherd",
+    id: 8,
+    name: "Red Collar", // Changed from 1
+    age: "8 weeks",
+    price: 970, // Price adjusted
+    image: "/images/red-collar-female.jpeg",
+    description: "Red Collar is a sweet and gentle puppy, perfect for a loving family. She's very affectionate and enjoys playtime.",
   },
   {
-    id: 2,
-    name: "Blue Collar", // Changed from Luna
-    age: "1.5 years",
-    price: 900, // Price adjusted
-    image: "/images/luna.jpg",
-    description: "Beautiful female with excellent temperament",
+    id: 3,
+    name: "Rex", // Changed from Luna
+    gender: "Male",
+    price: 850, // Price adjusted
+    image: "/images/rex.jpg",
+    description: "Rex is a mature, calm German Shepherd perfect for families looking for a gentle giant. He's great with children.",
   },
 ]
 
