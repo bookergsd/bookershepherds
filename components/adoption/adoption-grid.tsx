@@ -230,6 +230,64 @@ const kLittersCatalog = [
   },
 ]
 
+const OtherCatalogs = [
+  {
+    id: 204,
+    image: "/images/01.jpg",
+    description:
+      "Meet our adorable baby, a stunning 10 weeks  old White Shepherd with a heart of gold. Calm yet confident, he carries himself with quiet grace and loyalty. Ace is incredibly intelligent and eager to please, making training a joy. He adores companionship and thrives on affection. A true gentleman with a playful spark, he’ll melt your heart in seconds.",
+  },
+    {
+    id: 205,
+    image: "/images/02.jpg",
+    description:
+      "This adorable German Shepherd pup is just 3 months old, full of playful energy and curiosity. With a calm yet confident nature, they love cuddles just as much as they enjoy exploring. Incredibly smart and eager to please, training feels more like bonding. They’re already showing the loyal and protective instincts the breed is known for. A perfect companion for both fun adventures and cozy nights in.",
+  },
+    {
+    id: 206,
+    image: "/images/03.jpg",
+    description:
+      "This  pup is full of energy and always ready for adventure, making them the perfect fit for an active family. Incredibly loyal and quick to learn, they thrive on both playtime and purposeful training. Their curious nature keeps every day exciting, while their gentle heart brings warmth to any home. Confident yet affectionate, they’ll be your best buddy on every journey.",
+  },
+  {
+  id: 207,
+  image: "/images/04.jpg",
+  description:
+    "This black shepherd pup is full of life and eager to explore the world by your side. Intelligent and quick to learn, they thrive on mental stimulation and active play. With a loyal heart and a protective spirit, they bond deeply with their family. Always alert, they’re a natural companion for outdoor adventures. Gentle with children and endlessly curious, they bring energy and love into any home.",
+  },
+  {
+  id: 208,
+  image: "/images/05.jpg",
+  description:
+    "This adorable pup is a perfect mix of fluff, charm, and bold curiosity. With those soulful eyes and soft, teddy-bear fur, they melt hearts instantly. Always eager to explore, this little one thrives on playtime, learning new tricks, and being right at the center of family fun. Despite the playful energy, there’s a gentle and calm side that loves cuddles and quiet moments too. A true companion in the making  loyal, bright, and ready to grow with a loving, active home.",
+  },
+    {
+  id: 209,
+  image: "/images/06.jpg",
+  description:
+    "This little heart-stealer is full of personality and charm just one look into those wide, curious eyes, and you’ll fall in love. With an alert stance and a playful spirit, this pup is always ready for new adventures, yet loves nothing more than curling up beside you when the day winds down. That one ear up and one ear down? A signature touch of mischief and sweetness! Exceptionally intelligent and eager to please, this furry friend would thrive in a loving home that enjoys fun, cuddles, and long walks. A true joy waiting to become someone’s loyal shadow and best buddy.",
+  },
+    {
+  id: 210,
+  image: "/images/07.jpg",
+  description:
+    "With a teddy bear coat and the most soulful gaze, this beautiful pup radiates warmth and affection. There’s a quiet confidence in those bright eyes a blend of intelligence and gentleness that’s hard to resist. Whether it’s learning new tricks, going on daily adventures, or simply cuddling by your side, this pup is always ready to make every moment special. Naturally calm yet playfully spirited, they’d make the perfect companion for a loving, active family. A loyal heart wrapped in soft fur, just waiting to be someone’s forever best friend.",
+  },
+    {
+  id: 211,
+  image: "/images/08.jpg",
+  description:
+    "This adorable pup is the perfect mix of fluff, brains, and boundless love. With ears full of personality and eyes that sparkle with curiosity, they’re always ready to explore, play, and snuggle. Calm and gentle in nature, yet full of fun energy, this little one loves being close to people and is happiest when surrounded by affection. Eager to learn and easy to bond with, they’re a dream companion for any family looking for a loyal, sweet, and playful addition to their home.",
+  },
+      {
+  id: 212,
+  image: "/images/09.jpg",
+  description:
+    "This darling pup is a little bundle of charm with a heart full of love and curiosity. With ears that perk up at every sound and eyes that sparkle with intelligence, they’re always ready to explore, learn, and be part of every family moment. Despite the fluffy cuteness, there’s a confident, loyal spirit shining through the kind that forms deep bonds and becomes a true lifelong companion. Playful yet gentle, energetic yet obedient, this pup is a perfect match for families looking for a loyal friend who will grow into a devoted guardian and loving member of the home.",
+  },
+  
+]
+
 export default function AdoptionGrid() {
   const [favorites, setFavorites] = useState<number[]>([])
   const { addItem } = useCart()
@@ -480,6 +538,35 @@ export default function AdoptionGrid() {
       <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">K Litters Catalog</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {kLittersCatalog.map((item) => (
+          <Card
+            key={item.id}
+            className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col"
+          >
+            <CardHeader className="p-0 relative">
+              <div
+                className="relative w-full h-72 bg-gray-100 cursor-pointer"
+                onClick={() => openImageModal(item.image)}
+              >
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt="K Litters Puppy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+            </CardHeader>
+            <CardContent className="p-6 flex-grow flex flex-col">
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{item.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Other Catalogs</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {OtherCatalogs.map((item) => (
           <Card
             key={item.id}
             className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col"
