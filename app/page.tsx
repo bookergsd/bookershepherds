@@ -5,6 +5,7 @@ import HeroSection from "@/components/home/hero-section"
 import IntroSection from "@/components/home/intro-section"
 import FeaturedSection from "@/components/home/featured-section"
 import TestimonialsSection from "@/components/home/testimonials-section"
+import OtherSection from "@/components/home/other-lsection"
 
 export const metadata: Metadata = {
   title: "BookerShepherds - Premium German Shepherd Adoption & Accessories",
@@ -21,6 +22,7 @@ export default function HomePage() {
         <IntroSection />
         <FeaturedSection />
         <TestimonialsSection />
+        <OtherSection />
       </main>
       <Footer />
     </div>
