@@ -3,11 +3,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 
 const othersection = [
-  {
+  /*{
     id: 1,
     name: "certification",
     image: "/images/certification2.png",
-  },
+  },*/
   {
     id: 2,
     name: "certification",
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Image
-                  src="/images/certification.png"
+                  src="/images/banner.jpg"
                   alt="Beautiful German Shepherd - BookerShepherds mission and values"
                   width={600}
                   height={500}
