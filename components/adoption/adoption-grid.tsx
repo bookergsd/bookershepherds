@@ -14,7 +14,7 @@ const adoptableDogs = [
   {
     id: 1,
     name: "Max",
-    weight: "75 lbs",
+    weight: "80 lbs",
     gender: "Male",
     price: 950,
     location: "Available",
@@ -27,7 +27,7 @@ const adoptableDogs = [
   {
     id: 2,
     name: "Luna",
-    weight: "65 lbs",
+    weight: "22 lbs",
     gender: "Female",
     price: 900,
     location: "Available",
@@ -40,7 +40,7 @@ const adoptableDogs = [
   {
     id: 3,
     name: "Rex",
-    weight: "80 lbs",
+    weight: "25 lbs",
     gender: "Male",
     price: 850,
     location: "Available",
@@ -53,7 +53,7 @@ const adoptableDogs = [
   {
     id: 4,
     name: "Bella",
-    weight: "35 lbs",
+    weight: "80 lbs",
     gender: "Female",
     price: 1000,
     location: "Available",
@@ -66,7 +66,7 @@ const adoptableDogs = [
   {
     id: 5,
     name: "Thor",
-    weight: "85 lbs",
+    weight: "28 lbs",
     gender: "Male",
     price: 800,
     location: "Available",
@@ -79,7 +79,7 @@ const adoptableDogs = [
   {
     id: 6,
     name: "Zara",
-    weight: "70 lbs",
+    weight: "24 lbs",
     gender: "Female",
     price: 920,
     location: "Available",
