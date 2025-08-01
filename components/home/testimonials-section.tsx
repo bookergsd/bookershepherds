@@ -5,15 +5,15 @@ import { Star } from "lucide-react"
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    image: "/images/5555.jpeg",
+    name: "Mike Chen",
+    image: "/images/5555.jpg",
     rating: 5,
     text: "We adopted Red Collar from BookerShepherds and couldn't be happier! The process was smooth and the team was incredibly helpful throughout.",
   },
   {
     id: 2,
-    name: "/images/11111.jpeg",
-    image: "/placeholder.svg?height=80&width=80",
+    name: "",
+    image: "/images/11111.jpeg",
     rating: 5,
     text: "The quality of accessories we purchased is outstanding. Our German Shepherd Blue Collar loves her new collar and leash!",
   },
