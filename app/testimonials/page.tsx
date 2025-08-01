@@ -16,7 +16,7 @@ const testimonials = [
     id: 1,
     name: "Sarah Johnson",
     location: "Austin, TX",
-    image: "/images/5555.jpeg",
+    image: "/images/5555.jpg",
     rating: 5,
     date: "November 2024",
     text: "We adopted Red Collar from BookerShepherds and couldn't be happier! The entire process was smooth, professional, and caring. Red Collar has been the perfect addition to our family. The team provided excellent guidance and support throughout the adoption process.",
