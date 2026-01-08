@@ -69,8 +69,8 @@ const testimonials = [
     image: "/images/333333.jpeg",
     rating: 5,
     date: "June 2024",
-    text: "Purple Collar is everything we hoped for and more! The team at BookerShepherds provided ongoing support even after adoption, checking in to make sure everything was going well. Their commitment to their dogs and families is truly remarkable.",
-    dogName: "Purple Collar",
+    text: "Luna is everything we hoped for and more! The team at BookerShepherds provided ongoing support even after adoption, checking in to make sure everything was going well. Their commitment to their dogs and families is truly remarkable.",
+    dogName: "Luna",
   },
   {
     id: 7,
@@ -90,7 +90,7 @@ const testimonials = [
     rating: 5,
     date: "April 2024",
     text: "The training treats from BookerShepherds are a game-changer! My dog loves them, and they're perfect for positive reinforcement.",
-    dogName: "Silver Collar",
+    dogName: "Rex",
   },
   {
     id: 9,
@@ -120,7 +120,7 @@ const testimonials = [
     rating: 5,
     date: "January 2024",
     text: "We adopted a puppy from BookerShepherds, and she's thriving. Healthy, happy, and full of love. Best decision ever!",
-    dogName: "Platinum Collar",
+    dogName: "Zara",
   },
 ]
 

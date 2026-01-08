@@ -21,8 +21,11 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">About BookerShepherds</h1>
             <p className="text-xl text-gray-700 leading-relaxed">
-              We are passionate advocates for the German Shepherd breed, dedicated to ethical breeding, responsible
-              adoption, and building a supportive community for GSD lovers everywhere.
+              We are passionate advocates for the German Shepherd breed, dedicated to ethical breeding, responsible adoption, and building a supportive community for GSD lovers everywhere. At BookerShepherds, our mission goes beyond producing beautiful puppies we focus on health, temperament, and strong bloodlines to ensure each puppy has the best possible start in life.
+               
+Our dogs are raised in a caring, hands-on environment where they receive early socialization, proper nutrition, and consistent human interaction. This helps shape confident, well-balanced German Shepherds that are ready to become loyal companions, family protectors, or working partners.
+
+We believe responsible breeding means transparency, education, and lifelong support. That’s why we work closely with each adopter, offering guidance and resources long after a puppy goes home. Whether you’re welcoming your first German Shepherd or adding another to your family, BookerShepherds is committed to matching you with a puppy that fits your lifestyle and goals.
             </p>
           </div>
         </section>
@@ -47,10 +50,12 @@ export default function AboutPage() {
                   <div className="text-center p-4 bg-amber-50 rounded-lg">
                     <Heart className="h-8 w-8 text-amber-600 mx-auto mb-2" />
                     <p className="font-semibold">Ethical Practices</p>
+                    <p className="text-xl text-gray-700">At BookerShepherds, ethical breeding is our foundation. We prioritize the well-being of every dog, follow responsible breeding standards, and ensure our puppies are raised with care, respect, and proper socialization from day one.</p>
                   </div>
                   <div className="text-center p-4 bg-amber-50 rounded-lg">
                     <Shield className="h-8 w-8 text-amber-600 mx-auto mb-2" />
                     <p className="font-semibold">Health Guaranteed</p>
+                    <p className="text-xl text-gray-700">Our puppies are bred with health as a top priority. Each puppy receives age-appropriate care and health checks to give them the strongest possible start, providing peace of mind and confidence for their new families.</p>
                   </div>
                 </div>
               </div>

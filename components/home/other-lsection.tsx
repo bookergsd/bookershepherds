@@ -13,11 +13,11 @@ const othersection = [
     name: "certification",
     image: "/images/approved5.png",
   },
-  {
-    id: 3,
-    name: "approval",
-    image: "/images/approved1.png",
-  },
+  // {
+  //   id: 3,
+  //   name: "approval",
+  //   image: "/images/approved1.png",
+  // },
   {
     id: 4,
     name: "approval",

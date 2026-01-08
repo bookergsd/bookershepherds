@@ -14,17 +14,17 @@ const featuredDogs = [
     id: 8,
     name: "Red Collar", // Changed from 1
     age: "8 weeks",
-    price: 970, // Price adjusted
+    price: 1070, // Price adjusted
     image: "/images/red-collar-female.jpeg",
     description: "Red Collar is a sweet and gentle puppy, perfect for a loving family. She's very affectionate and enjoys playtime.",
   },
   {
     id: 3,
-    name: "Rex", // Changed from Luna
+    name: "Chester", // Changed from Luna
     gender: "Male",
-    price: 850, // Price adjusted
-    image: "/images/rex.jpg",
-    description: "Rex is a mature, calm German Shepherd perfect for families looking for a gentle giant. He's great with children.",
+    price: 900, // Price adjusted
+    image: "/images/lil/lildog/IMG-20260107-WA0024.jpg",
+    description: "Chester is affectionate and highly intelligent, with excellent focus during training. She enjoys companionship and daily activity.",
   },
 ]
 

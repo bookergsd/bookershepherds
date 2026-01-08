@@ -15,9 +15,9 @@ import { useToast } from "@/hooks/use-toast"
 import { CheckCircle, Mail, AlertCircle, Heart, ShoppingCart } from "lucide-react"
 
 const shippingMethods = [
-  { id: "standard", name: "Standard Shipping", price: 9.99, days: "5-7 business days" },
-  { id: "express", name: "Express Shipping", price: 19.99, days: "2-3 business days" },
-  { id: "overnight", name: "Overnight Shipping", price: 39.99, days: "1 business day" },
+  { id: "standard", name: "Standard Shipping", price: 39.99, days: "5-7 business days" },
+  { id: "express", name: "Express Shipping", price: 59.99, days: "2-3 business days" },
+  { id: "overnight", name: "Overnight Shipping", price: 109.99, days: "1 business day" },
 ]
 
 const paymentMethods = [
