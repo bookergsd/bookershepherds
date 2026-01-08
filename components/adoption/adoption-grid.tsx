@@ -11,23 +11,10 @@ import { useToast } from "@/hooks/use-toast"
 import ImageModal from "@/components/image-modal"
 
 const adoptableDogs = [
-  {
-  id: 31,
-  name: "Bruno",
-  weight: "27 lbs",
-  gender: "Male",
-  price: 880,
-  location: "Available",
-  image: "/images/lil/lildog/IMG-20260107-WA0037.jpg",
-  description:
-    "Bruno is a strong, loyal German Shepherd with a calm and protective nature. He is well-mannered and does great in a family setting.",
-  traits: ["Loyal", "Protective", "Well-Mannered", "Sold Out"],
-  category: "Adult & Young Adult German Shepherds",
-},
 {
   id: 32,
   name: "Chester",
-  weight: "23 lbs",
+  weight: "75 lbs",
   gender: "Male",
   price: 900,
   location: "Available",
@@ -178,8 +165,8 @@ const adoptableDogs = [
   {
     id: 16,
     name: "White Collar",
-    age: "3 weeks",
-    weight: "6 lbs",
+    age: "8 weeks",
+    weight: "20 lbs",
     gender: "playfull",
     price: 1030,
     location: "Available",
@@ -190,77 +177,77 @@ const adoptableDogs = [
   },
     {
     id: 17,
-    name: "Green Collar",
-    age: "3 weeks",
-    weight: "5.3 lbs",
+    name: "Liam",
+    age: "12 weeks",
+    weight: "27 lbs",
     gender: "playfull",
     price: 1050,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0021.jpg",
     description:
-      "Green Collar is a confident and adventurous puppy who enjoys exploring new surroundings. He's playful and very alert.",
+      "Liam is a confident and adventurous puppy who enjoys exploring new surroundings. He's playful and very alert.",
     traits: ["Puppy", "Adventurous", "Alert"],
     category: "German Shepherd Puppies",
   },
   {
     id: 18,
-    name: "Yellow Collar",
-    age: "3 weeks",
-    weight: "5.1 lbs",
+    name: "Willy",
+    age: "12 weeks",
+    weight: "27 lbs",
     gender: "Loyal",
     price: 1010,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0038.jpg",
     description:
-      "Yellow Collar is a bright and cheerful puppy with a loving personality. She thrives on attention and human interaction.",
+      "Willy is a bright and cheerful puppy with a loving personality. She thrives on attention and human interaction.",
     traits: ["Puppy", "Cheerful", "Loving"],
     category: "German Shepherd Puppies",
   },
   {
     id: 19,
-    name: "Purple Collar",
-    age: "3 weeks",
-    weight: "4.2 lbs",
+    name: "Maya",
+    age: "12 weeks",
+    weight: "28 lbs",
     gender: "Loyal",
     price: 1000,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0022.jpg",
     description:
-      "Purple Collar is a gentle and quiet puppy who enjoys calm moments and close bonding. She's perfect for a relaxed home.",
+      "Maya is a gentle and quiet puppy who enjoys calm moments and close bonding. She's perfect for a relaxed home.",
     traits: ["Puppy", "Gentle", "Calm"],
     category: "German Shepherd Puppies",
   },
   {
     id: 20,
-    name: "Gray Collar",
-    age: "3 weeks",
-    weight: "5.6 lbs",
+    name: "Stella",
+    age: "12 weeks",
+    weight: "24 lbs",
     gender: "calm",
     price: 990,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0023.jpg",
     description:
-      "Gray Collar is an intelligent and observant puppy, quick to respond to sounds and movement. He shows early signs of leadership.",
+      "Stella is an intelligent and observant puppy, quick to respond to sounds and movement. He shows early signs of leadership.",
     traits: ["Puppy", "Intelligent", "Observant"],
     category: "German Shepherd Puppies",
   },
   {
     id: 21,
-    name: "Teal Collar",
-    age: "3 weeks",
-    weight: "4 lbs",
+    name: "Cooper",
+    age: "12 weeks",
+    weight: "26 lbs",
     gender: "Loyal",
     price: 1055,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0025.jpg",
     description:
-      "Teal Collar is a playful little pup who loves gentle play and cuddles. She's sweet-natured and very people-oriented.",
+      "Cooper is a playful little pup who loves gentle play and cuddles. She's sweet-natured and very people-oriented.",
     traits: ["Puppy", "Sweet", "Playful"],
     category: "German Shepherd Puppies",
   },
   {
     id: 22,
-    name: "Silver Collar",
+    name: "Luna",
     age: "4 weeks",
     weight: "6.1 lbs",
     gender: "playfull",
@@ -268,57 +255,57 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0026.jpg",
     description:
-      "Silver Collar is strong and sturdy for his age, with a calm and balanced temperament. He's confident without being aggressive.",
+      "Luna is strong and sturdy for his age, with a calm and balanced temperament. He's confident without being aggressive.",
     traits: ["Puppy", "Strong", "Balanced"],
     category: "German Shepherd Puppies",
   },
-  {
-    id: 23,
-    name: "Lime Collar",
-    age: "3 weeks",
-    weight: "5 lbs",
-    gender: "Gentle",
-    price: 1000,
-    location: "Available",
-    image: "/images/lil/IMG-20260107-WA0027.jpg",
-    description:
-      "Lime Collar is curious and outgoing, always eager to investigate new sights and sounds. She loves playful interaction.",
-    traits: ["Puppy", "Curious", "Outgoing"],
-    category: "German Shepherd Puppies",
-  },
+  // {
+  //   id: 23,
+  //   name: "Lime Collar",
+  //   age: "3 weeks",
+  //   weight: "5 lbs",
+  //   gender: "Gentle",
+  //   price: 1000,
+  //   location: "Available",
+  //   image: "/images/lil/IMG-20260107-WA0027.jpg",
+  //   description:
+  //     "Lime Collar is curious and outgoing, always eager to investigate new sights and sounds. She loves playful interaction.",
+  //   traits: ["Puppy", "Curious", "Outgoing"],
+  //   category: "German Shepherd Puppies",
+  // },
   {
     id: 24,
-    name: "Navy Collar",
-    age: "4 weeks",
-    weight: "6.3 lbs",
+    name: "Bella",
+    age: "12 weeks",
+    weight: "24 lbs",
     gender: "Brave",
     price: 1100,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0028.jpg",
     description:
-      "Navy Collar is a loyal and steady puppy with a protective instinct already forming. He bonds quickly with caregivers.",
+      "Bella is a loyal and steady puppy with a protective instinct already forming. He bonds quickly with caregivers.",
     traits: ["Puppy", "Loyal", "Protective"],
     category: "German Shepherd Puppies",
   },
   {
     id: 25,
-    name: "Peach Collar",
-    age: "3 weeks",
-    weight: "3.8 lbs",
+    name: "Zusi",
+    age: "8 weeks",
+    weight: "16lbs",
     gender: "Gentle",
     price: 1000,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0029.jpg",
     description:
-      "Peach Collar is a soft-hearted puppy who enjoys warmth and comfort. She's gentle, affectionate, and easygoing.",
+      "Zusi is a soft-hearted puppy who enjoys warmth and comfort. She's gentle, affectionate, and easygoing.",
     traits: ["Puppy", "Affectionate", "Easygoing"],
     category: "German Shepherd Puppies",
   },
   {
     id: 26,
-    name: "Camo Collar",
-    age: "3 weeks",
-    weight: "5.7 lbs",
+    name: "Rocky",
+    age: "10 weeks",
+    weight: "23 lbs",
     gender: "calm",
     price: 1030,
     location: "Available",
@@ -330,37 +317,37 @@ const adoptableDogs = [
   },
   {
     id: 27,
-    name: "Lavender Collar",
-    age: "3 weeks",
-    weight: "5.2 lbs",
+    name: "Miss brown",
+    age: "12 weeks",
+    weight: "24 lbs",
     gender: "Gentle",
     price: 1070,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0032.jpg",
     description:
-      "Lavender Collar is friendly and well-balanced, enjoying both playtime and quiet moments. She adapts easily to new environments.",
+      "Miss brown is friendly and well-balanced, enjoying both playtime and quiet moments. She adapts easily to new environments.",
     traits: ["Puppy", "Friendly", "Adaptable"],
     category: "German Shepherd Puppies",
   },
   {
     id: 28,
-    name: "Maroon Collar",
-    age: "4 weeks",
-    weight: "6.5 lbs",
+    name: "Zues",
+    age: "12.5 weeks",
+    weight: "28 lbs",
     gender: "Brave",
     price: 1000,
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0033.jpg",
     description:
-      "Maroon Collar is a solid-built puppy with a calm demeanor and strong presence. He shows excellent focus for his age.",
+      "Zues is a solid-built puppy with a calm demeanor and strong presence. He shows excellent focus for his age.",
     traits: ["Puppy", "Calm", "Focused"],
     category: "German Shepherd Puppies",
   },
   {
     id: 33,
-  name: "Gold Collar",
-  age: "3 weeks",
-  weight: "5.4 lbs",
+  name: "Shadow",
+  age: "12 weeks",
+  weight: "27 lbs",
   gender: "Gentle",
   price: 1100,
   location: "Available",
@@ -372,9 +359,9 @@ const adoptableDogs = [
   },
   {
     id: 29,
-    name: "Aqua Collar",
-    age: "3 weeks",
-    weight: "4.1 lbs",
+    name: "Zake",
+    age: "12 weeks",
+    weight: "27 lbs",
     gender: "Affectionate",
     price: 1100,
     location: "Available",
@@ -469,7 +456,7 @@ const OtherCatalogs = [
   id: 210,
   image: "/images/07.jpg",
   description:
-    "With a teddy bear coat and the most soulful gaze, this beautiful pup radiates warmth and affection. There’s a quiet confidence in those bright eyes a blend of intelligence and gentleness that’s hard to resist. Whether it’s learning new tricks, going on daily adventures, or simply cuddling by your side, this pup is always ready to make every moment special. Naturally calm yet playfully spirited, they’d make the perfect companion for a loving, active family. A loyal heart wrapped in soft fur, just waiting to be someone’s forever best friend.",
+    "Our breeding pair are social, intelligent, and affectionate German Shepherds. They thrive on human interaction, early training, and family engagement, giving their puppies a confident and friendly start in life. With consistent care and positive experiences, these parents help produce puppies that are well-mannered, curious, and ready to bond with their new famil",
   },
     {
   id: 211,
@@ -486,6 +473,27 @@ const OtherCatalogs = [
   
 ]
 
+const ParentsCatalogs = [
+  {
+    id: 214,
+    image: "/images/lil/lildog/IMG-20260107-WA0034.jpg",
+    description:
+      "Meet our adorable baby, a stunning 10 weeks  old White Shepherd with a heart of gold. Calm yet confident, he carries himself with quiet grace and loyalty. Ace is incredibly intelligent and eager to please, making training a joy. He adores companionship and thrives on affection. A true gentleman with a playful spark, he’ll melt your heart in seconds.",
+  },
+  //   {
+  //   id: 215,
+  //   image: "/images/lil/lildog/IMG-20260107-WA0037.jpg",
+  //   description:
+  //     "Both parents come from strong, carefully selected bloodlines with a focus on health, structure, and longevity. With thorough health testing and proper nutrition, they pass on robust genetics to their puppies. Their dedication to learning and adaptability ensures each litter inherits both mental sharpness and physical strength.",
+  // },
+    {
+    id: 216,
+    image: "/images/lil/lildog/111.jpeg",
+    description:
+      "Our parent dogs exemplify the ideal German Shepherd temperament—confident, loyal, and well-balanced. Raised with daily human interaction, proper socialization, and hands-on care, they provide a strong foundation for healthy, well-adjusted puppies. Their calm yet alert nature ensures offspring that are both loving companions and capable protectors.",
+  },
+  
+]
 export default function AdoptionGrid() {
   const [favorites, setFavorites] = useState<number[]>([])
   const { addItem } = useCart()
@@ -761,8 +769,47 @@ export default function AdoptionGrid() {
           </Card>
         ))}
       </div>
+      
 
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Other Catalogs</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {OtherCatalogs.map((item) => (
+          <Card
+            key={item.id}
+            className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col"
+          >
+            <CardHeader className="p-0 relative">
+              <div
+                className="relative w-full h-72 bg-gray-100 cursor-pointer"
+                onClick={() => openImageModal(item.image)}
+              >
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt="K Litters Puppy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+            </CardHeader>
+            <CardContent className="p-6 flex-grow flex flex-col">
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{item.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Parent Catalogs</h2>
+      <p className="text-sm text-gray-500">Meet the heart and soul behind our puppies two remarkable German Shepherd parents whose story is as beautiful as their temperament.
+
+Their journey began with strong, carefully selected bloodlines rooted in loyalty, intelligence, and balance. Both parents were raised with love, structure, and purpose, growing into confident, gentle companions who thrive on human connection. From a young age, they showed exceptional curiosity, calm confidence, and that unmistakable German Shepherd devotion always alert, always eager to please, yet incredibly affectionate.
+
+The sire carries a noble presence steady, protective, and wise beyond his years. He has a soft spot for family time, gentle play, and watching over his loved ones with quiet pride. The dam is equally special nurturing, graceful, and endlessly loving. She has a tender spirit, an intuitive nature, and a way of making everyone around her feel safe and comforted.
+
+Together, they form a perfect balance of strength and sweetness. Their bond is built on trust, companionship, and mutual respect and it shows in every puppy they bring into the world. Each litter reflects their parents’ best qualities: loving hearts, intelligent minds, and that classic German Shepherd loyalty that makes the breed so unforgettable.
+
+These parents aren’t just dogs — they’re family. And their puppies are raised with that same belief: loved from the very beginning, guided with care, and destined to become lifelong companions filled with devotion, confidence, and joy.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {OtherCatalogs.map((item) => (
           <Card
