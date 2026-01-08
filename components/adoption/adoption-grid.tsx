@@ -801,7 +801,7 @@ export default function AdoptionGrid() {
       </div>
 
       <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Parent Catalogs</h2>
-      <p className="text-sm text-gray-500">Meet the heart and soul behind our puppies two remarkable German Shepherd parents whose story is as beautiful as their temperament.
+      <p className="text-sm text-gray-500 text-center">Meet the heart and soul behind our puppies two remarkable German Shepherd parents whose story is as beautiful as their temperament.
 
 Their journey began with strong, carefully selected bloodlines rooted in loyalty, intelligence, and balance. Both parents were raised with love, structure, and purpose, growing into confident, gentle companions who thrive on human connection. From a young age, they showed exceptional curiosity, calm confidence, and that unmistakable German Shepherd devotion always alert, always eager to please, yet incredibly affectionate.
 
@@ -811,7 +811,7 @@ Together, they form a perfect balance of strength and sweetness. Their bond is b
 
 These parents aren’t just dogs — they’re family. And their puppies are raised with that same belief: loved from the very beginning, guided with care, and destined to become lifelong companions filled with devotion, confidence, and joy.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {OtherCatalogs.map((item) => (
+        {ParentCatalogs.map((item) => (
           <Card
             key={item.id}
             className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col"
