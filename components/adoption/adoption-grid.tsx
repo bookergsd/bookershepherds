@@ -248,8 +248,8 @@ const adoptableDogs = [
   {
     id: 22,
     name: "Luna",
-    age: "4 weeks",
-    weight: "6.1 lbs",
+    age: "12 weeks",
+    weight: "24 lbs",
     gender: "playfull",
     price: 1050,
     location: "Available",
@@ -478,7 +478,7 @@ const ParentsCatalogs = [
     id: 214,
     image: "/images/lil/lildog/IMG-20260107-WA0034.jpg",
     description:
-      "Meet our adorable baby, a stunning 10 weeks  old White Shepherd with a heart of gold. Calm yet confident, he carries himself with quiet grace and loyalty. Ace is incredibly intelligent and eager to please, making training a joy. He adores companionship and thrives on affection. A true gentleman with a playful spark, he’ll melt your heart in seconds.",
+        "Meet the heart behind our puppies—two exceptional German Shepherd parents who represent the foundation of our program. Built on carefully selected bloodlines, they were raised with intention, structure, and love. Both parents are confident, gentle, and deeply connected to people, showing calm confidence, intelligence, and the unmistakable loyalty the breed is known for. Together, they create a perfect balance of strength and tenderness. Their natural bond and steady temperaments shine through in their puppies, who consistently inherit loving hearts, stable minds, and strong devotion to family. More than parents, they are family—and their puppies are raised the same way: loved from the very beginning and prepared to become loyal, lifelong companions.",
   },
   //   {
   //   id: 215,
@@ -490,7 +490,7 @@ const ParentsCatalogs = [
     id: 216,
     image: "/images/lil/lildog/111.jpeg",
     description:
-      "Our parent dogs exemplify the ideal German Shepherd temperament—confident, loyal, and well-balanced. Raised with daily human interaction, proper socialization, and hands-on care, they provide a strong foundation for healthy, well-adjusted puppies. Their calm yet alert nature ensures offspring that are both loving companions and capable protectors.",
+  "Meet our adorable baby, a stunning 10 weeks  old White Shepherd with a heart of gold. Calm yet confident, he carries himself with quiet grace and loyalty. Ace is incredibly intelligent and eager to please, making training a joy. He adores companionship and thrives on affection. A true gentleman with a playful spark, he’ll melt your heart in seconds.",
   },
   
 ]
