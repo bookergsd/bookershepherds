@@ -811,7 +811,7 @@ Together, they form a perfect balance of strength and sweetness. Their bond is b
 
 These parents aren’t just dogs — they’re family. And their puppies are raised with that same belief: loved from the very beginning, guided with care, and destined to become lifelong companions filled with devotion, confidence, and joy.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {ParentCatalogs.map((item) => (
+        {ParentsCatalogs.map((item) => (
           <Card
             key={item.id}
             className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col"
