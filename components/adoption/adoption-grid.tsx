@@ -478,7 +478,7 @@ const ParentsCatalogs = [
     id: 214,
     image: "/images/lil/lildog/IMG-20260107-WA0034.jpg",
     description:
-        "Meet the heart behind our puppies—two exceptional German Shepherd parents who represent the foundation of our program. Built on carefully selected bloodlines, they were raised with intention, structure, and love. Both parents are confident, gentle, and deeply connected to people, showing calm confidence, intelligence, and the unmistakable loyalty the breed is known for. Together, they create a perfect balance of strength and tenderness. Their natural bond and steady temperaments shine through in their puppies, who consistently inherit loving hearts, stable minds, and strong devotion to family. More than parents, they are family—and their puppies are raised the same way: loved from the very beginning and prepared to become loyal, lifelong companions.",
+        "At Booker’s Shepherds, everything begins with intention, and these two remarkable parents are a true part of the legacy we’ve built. Their story isn’t about titles or flash—it’s about character, consistency, and heart. Raised hands-on in a family environment, they were shaped by daily life and real-world experiences into steady, well-balanced German Shepherds. From the beginning, they showed exactly what we value most: sound temperaments, strong nerves, deep loyalty, and a genuine love for people.Together, they complement each other beautifully—strength balanced with softness, protection paired with affection. Their bond is natural, and it shows in the calm, attentive way they raise their puppies. Today, their influence extends beyond their own litters as proud grandparents to puppies thriving in loving homes. Each carries forward the traits they pass on so reliably: confidence, intelligence, loyalty, and devotion to family. They represent the foundation of our program—dogs raised with purpose, love, and care from the very beginning.",
   },
   //   {
   //   id: 215,
@@ -490,7 +490,7 @@ const ParentsCatalogs = [
     id: 216,
     image: "/images/lil/lildog/111.jpeg",
     description:
-  "Meet our adorable baby, a stunning 10 weeks  old White Shepherd with a heart of gold. Calm yet confident, he carries himself with quiet grace and loyalty. Ace is incredibly intelligent and eager to please, making training a joy. He adores companionship and thrives on affection. A true gentleman with a playful spark, he’ll melt your heart in seconds.",
+        "Meet the heart behind our puppies—two exceptional German Shepherd parents who represent the foundation of our program. Built on carefully selected bloodlines, they were raised with intention, structure, and love. Both parents are confident, gentle, and deeply connected to people, showing calm confidence, intelligence, and the unmistakable loyalty the breed is known for. Together, they create a perfect balance of strength and tenderness. Their natural bond and steady temperaments shine through in their puppies, who consistently inherit loving hearts, stable minds, and strong devotion to family. More than parents, they are family—and their puppies are raised the same way: loved from the very beginning and prepared to become loyal, lifelong companions.",
   },
   
 ]
