@@ -1,29 +1,35 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Heart, Calendar, Weight, MapPin } from "lucide-react"
-import { useCart } from "@/components/cart/cart-context"
-import { useToast } from "@/hooks/use-toast"
-import ImageModal from "@/components/image-modal"
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Heart, Calendar, Weight, MapPin } from "lucide-react";
+import { useCart } from "@/components/cart/cart-context";
+import { useToast } from "@/hooks/use-toast";
+import ImageModal from "@/components/image-modal";
 
 const adoptableDogs = [
-{
-  id: 32,
-  name: "Chester",
-  weight: "75 lbs",
-  gender: "Male",
-  price: 900,
-  location: "Available",
-  image: "/images/lil/lildog/IMG-20260107-WA0024.jpg",
-  description:
-    "Chester is affectionate and highly intelligent, with excellent focus during training. She enjoys companionship and daily activity.",
-  traits: ["Affectionate", "Intelligent", "Focused", "Sold Out"],
-  category: "Adult & Young Adult German Shepherds",
-},
+  {
+    id: 32,
+    name: "Chester",
+    weight: "75 lbs",
+    gender: "Male",
+    price: 900,
+    location: "Available",
+    image: "/images/lil/lildog/IMG-20260107-WA0024.jpg",
+    description:
+      "Chester is affectionate and highly intelligent, with excellent focus during training. He enjoys companionship and daily activity.",
+    traits: ["Affectionate", "Intelligent", "Focused", "Sold Out"],
+    category: "Adult & Young Adult German Shepherds",
+  },
 
   {
     id: 32,
@@ -171,11 +177,12 @@ const adoptableDogs = [
     price: 1030,
     location: "Available",
     image: "/images/male-puppy.jpeg",
-    description: "This 7-week-old male puppy is full of energy and charm, ready to find his forever home.",
+    description:
+      "This 7-week-old male puppy is full of energy and charm, ready to find his forever home.",
     traits: ["Puppy", "Energetic", "Charming"],
     category: "German Shepherd Puppies",
   },
-    {
+  {
     id: 17,
     name: "Liam",
     age: "12 weeks",
@@ -199,7 +206,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0038.jpg",
     description:
-      "Willy is a bright and cheerful puppy with a loving personality. She thrives on attention and human interaction.",
+      "Willy is a bright and cheerful puppy with a loving personality. Thrives on attention and human interaction.",
     traits: ["Puppy", "Cheerful", "Loving"],
     category: "German Shepherd Puppies",
   },
@@ -227,7 +234,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0023.jpg",
     description:
-      "Stella is an intelligent and observant puppy, quick to respond to sounds and movement. He shows early signs of leadership.",
+      "Stella is an intelligent and observant puppy, quick to respond to sounds and movement. Shows early signs of leadership.",
     traits: ["Puppy", "Intelligent", "Observant"],
     category: "German Shepherd Puppies",
   },
@@ -241,7 +248,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0025.jpg",
     description:
-      "Cooper is a playful little pup who loves gentle play and cuddles. She's sweet-natured and very people-oriented.",
+      "Cooper is a playful little pup who loves gentle play and cuddles. Sweet-natured and very people-oriented.",
     traits: ["Puppy", "Sweet", "Playful"],
     category: "German Shepherd Puppies",
   },
@@ -255,7 +262,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0026.jpg",
     description:
-      "Luna is strong and sturdy for his age, with a calm and balanced temperament. He's confident without being aggressive.",
+      "Luna is strong and sturdy for his age, with a calm and balanced temperament. Confident without being aggressive.",
     traits: ["Puppy", "Strong", "Balanced"],
     category: "German Shepherd Puppies",
   },
@@ -345,17 +352,17 @@ const adoptableDogs = [
   },
   {
     id: 33,
-  name: "Shadow",
-  age: "12 weeks",
-  weight: "27 lbs",
-  gender: "Gentle",
-  price: 1100,
-  location: "Available",
-  image: "/images/lil/IMG-20260107-WA0036.jpg",
-  description:
-    "Gold Collar is a confident and affectionate puppy with a curious nature. He enjoys both playtime and quiet bonding moments.",
-  traits: ["Puppy", "Confident", "Affectionate"],
-  category: "German Shepherd Puppies",
+    name: "Shadow",
+    age: "12 weeks",
+    weight: "27 lbs",
+    gender: "Gentle",
+    price: 1100,
+    location: "Available",
+    image: "/images/lil/IMG-20260107-WA0036.jpg",
+    description:
+      "Gold Collar is a confident and affectionate puppy with a curious nature. He enjoys both playtime and quiet bonding moments.",
+    traits: ["Puppy", "Confident", "Affectionate"],
+    category: "German Shepherd Puppies",
   },
   {
     id: 29,
@@ -367,11 +374,11 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0035.jpg",
     description:
-      "Aqua Collar is lively and expressive, often wagging her tail during interaction. She loves attention and gentle play.",
+      "Aqua Collar is lively and expressive, often wagging her tail during interaction. Loves attention and gentle play.",
     traits: ["Puppy", "Expressive", "Lively"],
     category: "German Shepherd Puppies",
-  }
-]
+  },
+];
 
 const diorTeaCatalog = [
   {
@@ -392,7 +399,7 @@ const diorTeaCatalog = [
     description:
       "The girls from our Dior x Tea litter are growing up so nicely. This has been such a fun litter to raise, and we're really happy with how this cross is turning out.They're confident, curious, and each one has their own little personality starting to show. We're excited to watch them grow and see how they mature over the next few weeks.",
   },
-]
+];
 
 const kLittersCatalog = [
   {
@@ -413,7 +420,7 @@ const kLittersCatalog = [
     description:
       "Another wonderful puppy from K Litters German Shepherds. We play a critical role in shaping a puppy's future. The first 8 weeks of a puppy's life are crucial, and the experiences they have during this time can shape their confidence, behavior, and temperament for years to come.",
   },
-]
+];
 
 const OtherCatalogs = [
   {
@@ -422,63 +429,62 @@ const OtherCatalogs = [
     description:
       "Meet our adorable baby, a stunning 10 weeks  old White Shepherd with a heart of gold. Calm yet confident, he carries himself with quiet grace and loyalty. Ace is incredibly intelligent and eager to please, making training a joy. He adores companionship and thrives on affection. A true gentleman with a playful spark, he’ll melt your heart in seconds.",
   },
-    {
+  {
     id: 205,
     image: "/images/02.jpg",
     description:
       "This adorable German Shepherd pup is just 3 months old, full of playful energy and curiosity. With a calm yet confident nature, they love cuddles just as much as they enjoy exploring. Incredibly smart and eager to please, training feels more like bonding. They’re already showing the loyal and protective instincts the breed is known for. A perfect companion for both fun adventures and cozy nights in.",
   },
-    {
+  {
     id: 206,
     image: "/images/03.jpg",
     description:
       "This  pup is full of energy and always ready for adventure, making them the perfect fit for an active family. Incredibly loyal and quick to learn, they thrive on both playtime and purposeful training. Their curious nature keeps every day exciting, while their gentle heart brings warmth to any home. Confident yet affectionate, they’ll be your best buddy on every journey.",
   },
   {
-  id: 207,
-  image: "/images/04.jpg",
-  description:
-    "This black shepherd pup is full of life and eager to explore the world by your side. Intelligent and quick to learn, they thrive on mental stimulation and active play. With a loyal heart and a protective spirit, they bond deeply with their family. Always alert, they’re a natural companion for outdoor adventures. Gentle with children and endlessly curious, they bring energy and love into any home.",
+    id: 207,
+    image: "/images/04.jpg",
+    description:
+      "This black shepherd pup is full of life and eager to explore the world by your side. Intelligent and quick to learn, they thrive on mental stimulation and active play. With a loyal heart and a protective spirit, they bond deeply with their family. Always alert, they’re a natural companion for outdoor adventures. Gentle with children and endlessly curious, they bring energy and love into any home.",
   },
   {
-  id: 208,
-  image: "/images/05.jpg",
-  description:
-    "This adorable pup is a perfect mix of fluff, charm, and bold curiosity. With those soulful eyes and soft, teddy-bear fur, they melt hearts instantly. Always eager to explore, this little one thrives on playtime, learning new tricks, and being right at the center of family fun. Despite the playful energy, there’s a gentle and calm side that loves cuddles and quiet moments too. A true companion in the making  loyal, bright, and ready to grow with a loving, active home.",
+    id: 208,
+    image: "/images/05.jpg",
+    description:
+      "This adorable pup is a perfect mix of fluff, charm, and bold curiosity. With those soulful eyes and soft, teddy-bear fur, they melt hearts instantly. Always eager to explore, this little one thrives on playtime, learning new tricks, and being right at the center of family fun. Despite the playful energy, there’s a gentle and calm side that loves cuddles and quiet moments too. A true companion in the making  loyal, bright, and ready to grow with a loving, active home.",
   },
-    {
-  id: 209,
-  image: "/images/06.jpg",
-  description:
-    "This little heart-stealer is full of personality and charm just one look into those wide, curious eyes, and you’ll fall in love. With an alert stance and a playful spirit, this pup is always ready for new adventures, yet loves nothing more than curling up beside you when the day winds down. That one ear up and one ear down? A signature touch of mischief and sweetness! Exceptionally intelligent and eager to please, this furry friend would thrive in a loving home that enjoys fun, cuddles, and long walks. A true joy waiting to become someone’s loyal shadow and best buddy.",
+  {
+    id: 209,
+    image: "/images/06.jpg",
+    description:
+      "This little heart-stealer is full of personality and charm just one look into those wide, curious eyes, and you’ll fall in love. With an alert stance and a playful spirit, this pup is always ready for new adventures, yet loves nothing more than curling up beside you when the day winds down. That one ear up and one ear down? A signature touch of mischief and sweetness! Exceptionally intelligent and eager to please, this furry friend would thrive in a loving home that enjoys fun, cuddles, and long walks. A true joy waiting to become someone’s loyal shadow and best buddy.",
   },
-    {
-  id: 210,
-  image: "/images/07.jpg",
-  description:
-    "Our breeding pair are social, intelligent, and affectionate German Shepherds. They thrive on human interaction, early training, and family engagement, giving their puppies a confident and friendly start in life. With consistent care and positive experiences, these parents help produce puppies that are well-mannered, curious, and ready to bond with their new famil",
+  {
+    id: 210,
+    image: "/images/07.jpg",
+    description:
+      "Our breeding pair are social, intelligent, and affectionate German Shepherds. They thrive on human interaction, early training, and family engagement, giving their puppies a confident and friendly start in life. With consistent care and positive experiences, these parents help produce puppies that are well-mannered, curious, and ready to bond with their new famil",
   },
-    {
-  id: 211,
-  image: "/images/08.jpg",
-  description:
-    "This adorable pup is the perfect mix of fluff, brains, and boundless love. With ears full of personality and eyes that sparkle with curiosity, they’re always ready to explore, play, and snuggle. Calm and gentle in nature, yet full of fun energy, this little one loves being close to people and is happiest when surrounded by affection. Eager to learn and easy to bond with, they’re a dream companion for any family looking for a loyal, sweet, and playful addition to their home.",
+  {
+    id: 211,
+    image: "/images/08.jpg",
+    description:
+      "This adorable pup is the perfect mix of fluff, brains, and boundless love. With ears full of personality and eyes that sparkle with curiosity, they’re always ready to explore, play, and snuggle. Calm and gentle in nature, yet full of fun energy, this little one loves being close to people and is happiest when surrounded by affection. Eager to learn and easy to bond with, they’re a dream companion for any family looking for a loyal, sweet, and playful addition to their home.",
   },
-      {
-  id: 212,
-  image: "/images/09.jpg",
-  description:
-    "This darling pup is a little bundle of charm with a heart full of love and curiosity. With ears that perk up at every sound and eyes that sparkle with intelligence, they’re always ready to explore, learn, and be part of every family moment. Despite the fluffy cuteness, there’s a confident, loyal spirit shining through the kind that forms deep bonds and becomes a true lifelong companion. Playful yet gentle, energetic yet obedient, this pup is a perfect match for families looking for a loyal friend who will grow into a devoted guardian and loving member of the home.",
+  {
+    id: 212,
+    image: "/images/09.jpg",
+    description:
+      "This darling pup is a little bundle of charm with a heart full of love and curiosity. With ears that perk up at every sound and eyes that sparkle with intelligence, they’re always ready to explore, learn, and be part of every family moment. Despite the fluffy cuteness, there’s a confident, loyal spirit shining through the kind that forms deep bonds and becomes a true lifelong companion. Playful yet gentle, energetic yet obedient, this pup is a perfect match for families looking for a loyal friend who will grow into a devoted guardian and loving member of the home.",
   },
-  
-]
+];
 
 const ParentsCatalogs = [
   {
     id: 214,
     image: "/images/lil/lildog/IMG-20260107-WA0034.jpg",
     description:
-        "At Booker’s Shepherds, everything begins with intention, and these two remarkable parents are a true part of the legacy we’ve built. Their story isn’t about titles or flash—it’s about character, consistency, and heart. Raised hands-on in a family environment, they were shaped by daily life and real-world experiences into steady, well-balanced German Shepherds. From the beginning, they showed exactly what we value most: sound temperaments, strong nerves, deep loyalty, and a genuine love for people.Together, they complement each other beautifully—strength balanced with softness, protection paired with affection. Their bond is natural, and it shows in the calm, attentive way they raise their puppies. Today, their influence extends beyond their own litters as proud grandparents to puppies thriving in loving homes. Each carries forward the traits they pass on so reliably: confidence, intelligence, loyalty, and devotion to family. They represent the foundation of our program—dogs raised with purpose, love, and care from the very beginning.",
+      "At Booker’s Shepherds, everything begins with intention, and these two remarkable parents are a true part of the legacy we’ve built. Their story isn’t about titles or flash—it’s about character, consistency, and heart. Raised hands-on in a family environment, they were shaped by daily life and real-world experiences into steady, well-balanced German Shepherds. From the beginning, they showed exactly what we value most: sound temperaments, strong nerves, deep loyalty, and a genuine love for people.Together, they complement each other beautifully—strength balanced with softness, protection paired with affection. Their bond is natural, and it shows in the calm, attentive way they raise their puppies. Today, their influence extends beyond their own litters as proud grandparents to puppies thriving in loving homes. Each carries forward the traits they pass on so reliably: confidence, intelligence, loyalty, and devotion to family. They represent the foundation of our program—dogs raised with purpose, love, and care from the very beginning.",
   },
   //   {
   //   id: 215,
@@ -486,24 +492,27 @@ const ParentsCatalogs = [
   //   description:
   //     "Both parents come from strong, carefully selected bloodlines with a focus on health, structure, and longevity. With thorough health testing and proper nutrition, they pass on robust genetics to their puppies. Their dedication to learning and adaptability ensures each litter inherits both mental sharpness and physical strength.",
   // },
-    {
+  {
     id: 216,
     image: "/images/lil/lildog/111.jpeg",
     description:
-        "Meet the heart behind our puppies—two exceptional German Shepherd parents who represent the foundation of our program. Built on carefully selected bloodlines, they were raised with intention, structure, and love. Both parents are confident, gentle, and deeply connected to people, showing calm confidence, intelligence, and the unmistakable loyalty the breed is known for. Together, they create a perfect balance of strength and tenderness. Their natural bond and steady temperaments shine through in their puppies, who consistently inherit loving hearts, stable minds, and strong devotion to family. More than parents, they are family—and their puppies are raised the same way: loved from the very beginning and prepared to become loyal, lifelong companions.",
+      "Meet the heart behind our puppies—two exceptional German Shepherd parents who represent the foundation of our program. Built on carefully selected bloodlines, they were raised with intention, structure, and love. Both parents are confident, gentle, and deeply connected to people, showing calm confidence, intelligence, and the unmistakable loyalty the breed is known for. Together, they create a perfect balance of strength and tenderness. Their natural bond and steady temperaments shine through in their puppies, who consistently inherit loving hearts, stable minds, and strong devotion to family. More than parents, they are family—and their puppies are raised the same way: loved from the very beginning and prepared to become loyal, lifelong companions.",
   },
-  
-]
+];
 export default function AdoptionGrid() {
-  const [favorites, setFavorites] = useState<number[]>([])
-  const { addItem } = useCart()
-  const { toast } = useToast()
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [favorites, setFavorites] = useState<number[]>([]);
+  const { addItem } = useCart();
+  const { toast } = useToast();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleFavorite = (dogId: number) => {
-    setFavorites((prev) => (prev.includes(dogId) ? prev.filter((id) => id !== dogId) : [...prev, dogId]))
-  }
+    setFavorites((prev) =>
+      prev.includes(dogId)
+        ? prev.filter((id) => id !== dogId)
+        : [...prev, dogId],
+    );
+  };
 
   const handleAdoptDog = (dog: (typeof adoptableDogs)[0]) => {
     const cartItem = {
@@ -513,33 +522,39 @@ export default function AdoptionGrid() {
       image: dog.image,
       quantity: 1,
       type: "adoption" as const,
-    }
+    };
 
-    console.log("Adding dog to cart:", cartItem) // Debug log
-    addItem(cartItem)
+    console.log("Adding dog to cart:", cartItem); // Debug log
+    addItem(cartItem);
 
     toast({
       title: "Added to cart",
       description: `${dog.name} has been added to your adoption cart.`,
-    })
-  }
+    });
+  };
 
   const openImageModal = (imageSrc: string) => {
-    setSelectedImage(imageSrc)
-    setIsModalOpen(true)
-  }
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
+  };
 
   const closeImageModal = () => {
-    setSelectedImage(null)
-    setIsModalOpen(false)
-  }
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
 
-  const adultDogs = adoptableDogs.filter((dog) => dog.category === "Adult & Young Adult German Shepherds")
-  const puppyDogs = adoptableDogs.filter((dog) => dog.category === "German Shepherd Puppies")
+  const adultDogs = adoptableDogs.filter(
+    (dog) => dog.category === "Adult & Young Adult German Shepherds",
+  );
+  const puppyDogs = adoptableDogs.filter(
+    (dog) => dog.category === "German Shepherd Puppies",
+  );
 
   return (
     <>
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Adult & Young Adult German Shepherds</h2>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        Adult & Young Adult German Shepherds
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {adultDogs.map((dog) => (
           <Card
@@ -578,8 +593,13 @@ export default function AdoptionGrid() {
             </CardHeader>
             <CardContent className="p-6 flex-grow flex flex-col">
               <div className="flex items-center justify-between mb-3">
-                <CardTitle className="text-2xl font-bold text-gray-900">{dog.name}</CardTitle>
-                <Badge variant="outline" className="border-amber-600 text-amber-600 font-medium">
+                <CardTitle className="text-2xl font-bold text-gray-900">
+                  {dog.name}
+                </CardTitle>
+                <Badge
+                  variant="outline"
+                  className="border-amber-600 text-amber-600 font-medium"
+                >
                   {dog.gender}
                 </Badge>
               </div>
@@ -592,7 +612,9 @@ export default function AdoptionGrid() {
                 </div>
               </div>
 
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{dog.description}</p>
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">
+                {dog.description}
+              </p>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {dog.traits.map((trait, index) => (
@@ -607,7 +629,9 @@ export default function AdoptionGrid() {
               </div>
 
               <div className="mt-auto">
-                <p className="text-3xl font-bold text-amber-600 mb-1">${dog.price}</p>
+                <p className="text-3xl font-bold text-amber-600 mb-1">
+                  ${dog.price}
+                </p>
                 <p className="text-sm text-gray-500">Adoption Fee</p>
               </div>
             </CardContent>
@@ -624,7 +648,9 @@ export default function AdoptionGrid() {
         ))}
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">German Shepherd Puppies</h2>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        German Shepherd Puppies
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {puppyDogs.map((dog) => (
           <Card
@@ -663,8 +689,13 @@ export default function AdoptionGrid() {
             </CardHeader>
             <CardContent className="p-6 flex-grow flex flex-col">
               <div className="flex items-center justify-between mb-3">
-                <CardTitle className="text-2xl font-bold text-gray-900">{dog.name}</CardTitle>
-                <Badge variant="outline" className="border-amber-600 text-amber-600 font-medium">
+                <CardTitle className="text-2xl font-bold text-gray-900">
+                  {dog.name}
+                </CardTitle>
+                <Badge
+                  variant="outline"
+                  className="border-amber-600 text-amber-600 font-medium"
+                >
                   {dog.gender}
                 </Badge>
               </div>
@@ -680,7 +711,9 @@ export default function AdoptionGrid() {
                 </div>
               </div>
 
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{dog.description}</p>
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">
+                {dog.description}
+              </p>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {dog.traits.map((trait, index) => (
@@ -695,7 +728,9 @@ export default function AdoptionGrid() {
               </div>
 
               <div className="mt-auto">
-                <p className="text-3xl font-bold text-amber-600 mb-1">${dog.price}</p>
+                <p className="text-3xl font-bold text-amber-600 mb-1">
+                  ${dog.price}
+                </p>
                 <p className="text-sm text-gray-500">Adoption Fee</p>
               </div>
             </CardContent>
@@ -712,7 +747,9 @@ export default function AdoptionGrid() {
         ))}
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Dior x Tea Litters Catalog</h2>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        Dior x Tea Litters Catalog
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {diorTeaCatalog.map((item) => (
           <Card
@@ -735,13 +772,17 @@ export default function AdoptionGrid() {
               </div>
             </CardHeader>
             <CardContent className="p-6 flex-grow flex flex-col">
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{item.description}</p>
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">
+                {item.description}
+              </p>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">K Litters Catalog</h2>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        K Litters Catalog
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {kLittersCatalog.map((item) => (
           <Card
@@ -764,14 +805,17 @@ export default function AdoptionGrid() {
               </div>
             </CardHeader>
             <CardContent className="p-6 flex-grow flex flex-col">
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{item.description}</p>
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">
+                {item.description}
+              </p>
             </CardContent>
           </Card>
         ))}
       </div>
-      
 
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Other Catalogs</h2>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        Other Catalogs
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {OtherCatalogs.map((item) => (
           <Card
@@ -794,22 +838,41 @@ export default function AdoptionGrid() {
               </div>
             </CardHeader>
             <CardContent className="p-6 flex-grow flex flex-col">
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{item.description}</p>
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">
+                {item.description}
+              </p>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Parent Catalogs</h2>
-      <p className="text-sm text-gray-500 text-center">Meet the heart and soul behind our puppies two remarkable German Shepherd parents whose story is as beautiful as their temperament.
-
-Their journey began with strong, carefully selected bloodlines rooted in loyalty, intelligence, and balance. Both parents were raised with love, structure, and purpose, growing into confident, gentle companions who thrive on human connection. From a young age, they showed exceptional curiosity, calm confidence, and that unmistakable German Shepherd devotion always alert, always eager to please, yet incredibly affectionate.
-
-The sire carries a noble presence steady, protective, and wise beyond his years. He has a soft spot for family time, gentle play, and watching over his loved ones with quiet pride. The dam is equally special nurturing, graceful, and endlessly loving. She has a tender spirit, an intuitive nature, and a way of making everyone around her feel safe and comforted.
-
-Together, they form a perfect balance of strength and sweetness. Their bond is built on trust, companionship, and mutual respect and it shows in every puppy they bring into the world. Each litter reflects their parents’ best qualities: loving hearts, intelligent minds, and that classic German Shepherd loyalty that makes the breed so unforgettable.
-
-These parents aren’t just dogs — they’re family. And their puppies are raised with that same belief: loved from the very beginning, guided with care, and destined to become lifelong companions filled with devotion, confidence, and joy.</p>
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        Parent Catalogs
+      </h2>
+      <p className="text-sm text-gray-500 text-center">
+        Meet the heart and soul behind our puppies two remarkable German
+        Shepherd parents whose story is as beautiful as their temperament. Their
+        journey began with strong, carefully selected bloodlines rooted in
+        loyalty, intelligence, and balance. Both parents were raised with love,
+        structure, and purpose, growing into confident, gentle companions who
+        thrive on human connection. From a young age, they showed exceptional
+        curiosity, calm confidence, and that unmistakable German Shepherd
+        devotion always alert, always eager to please, yet incredibly
+        affectionate. The sire carries a noble presence steady, protective, and
+        wise beyond his years. He has a soft spot for family time, gentle play,
+        and watching over his loved ones with quiet pride. The dam is equally
+        special nurturing, graceful, and endlessly loving. She has a tender
+        spirit, an intuitive nature, and a way of making everyone around her
+        feel safe and comforted. Together, they form a perfect balance of
+        strength and sweetness. Their bond is built on trust, companionship, and
+        mutual respect and it shows in every puppy they bring into the world.
+        Each litter reflects their parents’ best qualities: loving hearts,
+        intelligent minds, and that classic German Shepherd loyalty that makes
+        the breed so unforgettable. These parents aren’t just dogs — they’re
+        family. And their puppies are raised with that same belief: loved from
+        the very beginning, guided with care, and destined to become lifelong
+        companions filled with devotion, confidence, and joy.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {ParentsCatalogs.map((item) => (
           <Card
@@ -832,7 +895,9 @@ These parents aren’t just dogs — they’re family. And their puppies are rai
               </div>
             </CardHeader>
             <CardContent className="p-6 flex-grow flex flex-col">
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">{item.description}</p>
+              <p className="text-gray-700 mb-4 text-sm leading-relaxed flex-grow">
+                {item.description}
+              </p>
             </CardContent>
           </Card>
         ))}
@@ -847,5 +912,5 @@ These parents aren’t just dogs — they’re family. And their puppies are rai
         />
       )}
     </>
-  )
+  );
 }
