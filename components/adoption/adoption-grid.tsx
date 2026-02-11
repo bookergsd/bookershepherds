@@ -206,7 +206,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0038.jpg",
     description:
-      "Willy is a bright and cheerful puppy with a loving personality. Thrives on attention and human interaction.",
+      "Willy is a bright and cheerful puppy with an irresistibly loving personality. He flourishes with attention and genuinely thrives on meaningful human interaction, always eager to share affection and joy.",
     traits: ["Puppy", "Cheerful", "Loving"],
     category: "German Shepherd Puppies",
   },
@@ -248,7 +248,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0025.jpg",
     description:
-      "Cooper is a playful little pup who loves gentle play and cuddles. Sweet-natured and very people-oriented.",
+      "Cooper is a spirited little pup who delights in gentle play and warm cuddles. Sweet-natured and deeply affectionate, he thrives on human companionship and adores being close to his people.",
     traits: ["Puppy", "Sweet", "Playful"],
     category: "German Shepherd Puppies",
   },
@@ -262,7 +262,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0026.jpg",
     description:
-      "Luna is strong and sturdy for his age, with a calm and balanced temperament. Confident without being aggressive.",
+      "Luna is a tiny bundle of sunshine, always wagging her tail like she’s spreading happiness everywhere she goes.She’s playful and curious, turning every little moment into a fun adventure full of zoomies and cuddles.With her sweet, gentle heart and puppy-dog eyes, Luna melts everyone around her in seconds. 🐾💕",
     traits: ["Puppy", "Strong", "Balanced"],
     category: "German Shepherd Puppies",
   },
@@ -290,7 +290,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0028.jpg",
     description:
-      "Bella is a loyal and steady puppy with a protective instinct already forming. He bonds quickly with caregivers.",
+      "Bella is a loyal and steady puppy with a protective instinct always ready to protect her human and bond quickly with her humans.",
     traits: ["Puppy", "Loyal", "Protective"],
     category: "German Shepherd Puppies",
   },
@@ -318,7 +318,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0030.jpg",
     description:
-      "Camo Collar is bold and energetic, showing strong confidence during play. He enjoys interactive toys and exploration.",
+      "Rocky is a playful little explorer who turns every corner of the house into his own exciting adventure. 🐾 He has the sweetest cuddles and a tail that wags nonstop whenever he sees his favorite people. Brave, curious, and full of love, Rocky’s tiny paws leave the biggest prints on your heart. 💛",
     traits: ["Puppy", "Bold", "Energetic"],
     category: "German Shepherd Puppies",
   },
@@ -346,7 +346,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0033.jpg",
     description:
-      "Zues is a solid-built puppy with a calm demeanor and strong presence. He shows excellent focus for his age.",
+      "Zeus is a bold little explorer with a heart full of courage and curiosity, always ready to turn every corner into a new adventure.He’s incredibly affectionate and loyal, melting into cuddles one moment and proudly standing guard the next.With his playful charm and bright, intelligent eyes, Zeus has a magical way of making everyone around him smile.",
     traits: ["Puppy", "Calm", "Focused"],
     category: "German Shepherd Puppies",
   },
@@ -360,7 +360,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0036.jpg",
     description:
-      "Gold Collar is a confident and affectionate puppy with a curious nature. He enjoys both playtime and quiet bonding moments.",
+      "Shadow is a brave little explorer with a curious nose and a fearless heart.He is loyal and affectionate, always staying close to his favorite humans.Playful and intelligent, he learns quickly and loves to show off his clever tricks.",
     traits: ["Puppy", "Confident", "Affectionate"],
     category: "German Shepherd Puppies",
   },
@@ -374,7 +374,7 @@ const adoptableDogs = [
     location: "Available",
     image: "/images/lil/IMG-20260107-WA0035.jpg",
     description:
-      "Aqua Collar is lively and expressive, often wagging her tail during interaction. Loves attention and gentle play.",
+      "Zake is a joyful little explorer with a curious nose and a brave heart.He’s affectionate and gentle, always ready for cuddles and playtime.Smart and eager to please, he forms deep, loyal bonds with his humans.",
     traits: ["Puppy", "Expressive", "Lively"],
     category: "German Shepherd Puppies",
   },
